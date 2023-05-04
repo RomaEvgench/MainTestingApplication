@@ -25,7 +25,6 @@ public class start {
             return "adminPage";
         }
 
-
         return "index";
     }
 }
