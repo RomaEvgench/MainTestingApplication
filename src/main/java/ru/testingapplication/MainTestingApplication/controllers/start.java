@@ -24,7 +24,6 @@ public class start {
         }else if(personDetails.getPerson().getRole().equals("role_admin")){
             return "adminPage";
         }
-
         return "index";
     }
 }
