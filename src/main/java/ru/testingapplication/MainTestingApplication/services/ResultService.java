@@ -3,6 +3,8 @@ package ru.testingapplication.MainTestingApplication.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.testingapplication.MainTestingApplication.models.Course;
+import ru.testingapplication.MainTestingApplication.models.Person;
 import ru.testingapplication.MainTestingApplication.models.Result;
 import ru.testingapplication.MainTestingApplication.repositories.ResultRepository;
 
@@ -37,6 +39,10 @@ public class ResultService {
     public void update(int id, Result updatedResult){
         //updatedPerson.setId(id);
         resultRepository.save(updatedResult);
+    }
+
+    public List<Result> findByPerson(Person person){
+        return resultRepository.findByPerson(person);
     }
 
     @Transactional

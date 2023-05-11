@@ -3,6 +3,7 @@ package ru.testingapplication.MainTestingApplication.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.testingapplication.MainTestingApplication.models.Course;
 import ru.testingapplication.MainTestingApplication.models.Person;
 import ru.testingapplication.MainTestingApplication.repositories.PeopleRepository;
 
@@ -33,11 +34,14 @@ public class PeopleService {
     }
 
     @Transactional
-    public void update(int id, Person updatedPerson){
+    public void update(Person updatedPerson){
         //updatedPerson.setId(id);
         peopleRepository.save(updatedPerson);
     }
 
+    public List<Person> findByCourse(Course course){
+        return peopleRepository.findByCourse(course);
+    }
     @Transactional
     public void delete(int id){
         peopleRepository.deleteById(id);

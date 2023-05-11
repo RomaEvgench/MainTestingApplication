@@ -3,7 +3,7 @@ package ru.testingapplication.MainTestingApplication.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Result")
+@Table(name = "result")
 public class Result {
 
     @Id

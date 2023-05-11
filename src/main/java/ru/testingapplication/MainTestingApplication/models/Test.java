@@ -5,7 +5,7 @@ import java.sql.Time;
 import java.util.List;
 
 @Entity
-@Table(name = "Test")
+@Table(name = "test")
 public class Test {
 
     @Id
@@ -46,6 +46,10 @@ public class Test {
 
     public void setTestDuration(Time test_duration) {
         this.test_duration = test_duration;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Course getCourse() {

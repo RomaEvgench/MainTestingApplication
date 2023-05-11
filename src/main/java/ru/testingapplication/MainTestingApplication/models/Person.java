@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Person")
+@Table(name = "person")
 public class Person {
 
     @Id
@@ -111,6 +111,10 @@ public class Person {
         return patronymic;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
     }
@@ -130,6 +134,9 @@ public class Person {
         this.coursegroup = coursegroup;
     }
 
+    public String getFullName(){
+        return this.last_name+this.first_name+this.patronymic;
+    }
     public Person(){
 
     }

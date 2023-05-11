@@ -2,9 +2,10 @@ package ru.testingapplication.MainTestingApplication.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "Question")
+@Table(name = "question")
 public class Question {
 
     @Id
@@ -25,9 +26,20 @@ public class Question {
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
 
+    @OneToMany(mappedBy = "question")
+    private List<AnswerOption> options;
+
     @ManyToOne
     @JoinColumn(name = "question_type_id", referencedColumnName = "id")
     private QuestionType questionType;
+
+    public void setOptions(List<AnswerOption> options) {
+        this.options = options;
+    }
+
+    public List<AnswerOption> getOptions() {
+        return options;
+    }
 
     public String getQuestionName() {
         return question_name;
@@ -39,6 +51,10 @@ public class Question {
 
     public String getQuestionText() {
         return question_text;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setQuestionText(String question_text) {

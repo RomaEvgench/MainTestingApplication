@@ -3,6 +3,8 @@ package ru.testingapplication.MainTestingApplication.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.testingapplication.MainTestingApplication.models.Course;
+import ru.testingapplication.MainTestingApplication.models.Person;
 import ru.testingapplication.MainTestingApplication.models.Test;
 import ru.testingapplication.MainTestingApplication.repositories.TestRepository;
 
@@ -37,6 +39,10 @@ public class TestService {
     public void update(int id, Test updatedTest){
         //updatedPerson.setId(id);
         testRepository.save(updatedTest);
+    }
+
+    public List<Test> findByCourse(Course course){
+        return testRepository.findByCourse(course);
     }
 
     @Transactional

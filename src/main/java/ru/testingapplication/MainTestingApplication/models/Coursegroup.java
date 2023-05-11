@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Coursegroup")
+@Table(name = "coursegroup")
 public class Coursegroup {
     @Id
     @Column(name = "id")

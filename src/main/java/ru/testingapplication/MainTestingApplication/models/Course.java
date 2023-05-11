@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Course")
+@Table(name = "course")
 public class Course {
 
     @Id
@@ -38,6 +38,10 @@ public class Course {
 
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setName(String name) {
