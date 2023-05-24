@@ -28,6 +28,13 @@ public class PeopleService {
          return foundPerson.orElse(null);
     }
 
+    public Optional<Person> findByUsername(String username){
+        return peopleRepository.findByUsername(username);
+    }
+
+    public Boolean existsByUsername(String username){
+        return peopleRepository.existsByUsername(username);
+    }
     @Transactional
     public void save(Person person){
         peopleRepository.save(person);
